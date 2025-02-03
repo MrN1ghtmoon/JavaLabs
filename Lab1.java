@@ -47,16 +47,31 @@ public class Lab1 {
         int x = scanner.nextInt();
         int y = scanner.nextInt();
         String word = scanner.next();
-        int step = scanner.nextInt();
+        int step;
         int counter = 0;
-        while(true){
+        boolean flag = true;
+        if (word.toLowerCase().equals("восток") || word.toLowerCase().equals("юг") || word.toLowerCase().equals("запад") || word.toLowerCase().equals("север")){
+            step = scanner.nextInt();
+        }
+        else{
+            System.out.println("Ошибка: Неправильный формат ввода");
+            flag = false;
+        }
+        while(flag){
             word = scanner.next();
             if (word.equals("стоп"))
             {
                 break;
             }
-            step = scanner.nextInt();
-            counter++;
+            if (word.toLowerCase().equals("восток") || word.toLowerCase().equals("юг") || word.toLowerCase().equals("запад") || word.toLowerCase().equals("север")){
+                step = scanner.nextInt();
+                counter++;
+            }
+            else{
+                System.out.println("Ошибка: Неправильный формат ввода");
+                flag = false;
+            }
+
 
         }
         System.out.println(counter);*/
